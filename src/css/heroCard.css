@@ -1,0 +1,100 @@
+.sweetwater-hero {
+  position: relative;
+  height: 100svh;
+  min-height: 100svh;
+  overflow: hidden;
+  color: #fff7ed;
+  background: var(--color-ink);
+}
+
+.sweetwater-hero__background,
+.sweetwater-hero__shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.sweetwater-hero__background {
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.95) contrast(1.08);
+  transform: scale(1.02);
+}
+
+.sweetwater-hero__shade {
+  background:
+    linear-gradient(90deg, rgba(24, 13, 7, 0.86) 0%, rgba(24, 13, 7, 0.68) 46%, rgba(24, 13, 7, 0.22) 100%),
+    linear-gradient(0deg, rgba(24, 13, 7, 0.82), rgba(24, 13, 7, 0.12) 44%, rgba(24, 13, 7, 0.7));
+}
+
+.sweetwater-hero__content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(760px, 100%);
+  height: 100svh;
+  padding: clamp(32px, 6vw, 84px);
+  overflow-y: auto;
+}
+
+.sweetwater-hero__kicker {
+  margin: 0 0 18px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--color-gold-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+}
+
+.sweetwater-hero h1 {
+  max-width: 780px;
+  margin: 0 0 22px;
+  font-family: 'Courier New', Rockwell, Georgia, serif;
+  font-size: clamp(48px, 8vw, 108px);
+  font-weight: 900;
+  line-height: 0.92;
+  color: #fff7ed;
+  letter-spacing: -0.075em;
+  text-shadow:
+    0 4px 0 rgba(69, 26, 3, 0.8),
+    0 18px 42px rgba(0, 0, 0, 0.42);
+}
+
+.sweetwater-hero__subtitle {
+  max-width: 720px;
+  margin: 0 0 26px;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.68;
+  color: var(--color-gold);
+}
+
+.sweetwater-hero__body {
+  display: grid;
+  gap: 12px;
+  max-width: 720px;
+}
+
+.sweetwater-hero__body p {
+  margin: 0;
+  font-size: clamp(15px, 1.55vw, 18px);
+  line-height: 1.86;
+  color: rgba(255, 251, 235, 0.92);
+}
+
+@media (max-width: 640px) {
+  .sweetwater-hero__shade {
+    background:
+      linear-gradient(90deg, rgba(24, 13, 7, 0.9), rgba(24, 13, 7, 0.7)),
+      linear-gradient(0deg, rgba(24, 13, 7, 0.88), rgba(24, 13, 7, 0.24));
+  }
+
+  .sweetwater-hero h1 {
+    font-size: clamp(42px, 15vw, 68px);
+  }
+}
