@@ -19,6 +19,11 @@ defineProps({
 })
 
 const emit = defineEmits(['openFriends'])
+
+const externalActionLinks = {
+  telegram: 'https://t.me/aokichiharu',
+  twitter: 'https://x.com/AokiiChiharu',
+}
 </script>
 
 <template>
@@ -48,6 +53,14 @@ const emit = defineEmits(['openFriends'])
               type="button"
               @click="emit('openFriends')"
             >{{ segment.text }}</button>
+            <a
+              v-else-if="externalActionLinks[segment.action]"
+              class="mind-console__link"
+              :class="segment.tone ? `is-${segment.tone}` : undefined"
+              :href="externalActionLinks[segment.action]"
+              target="_blank"
+              rel="noopener noreferrer"
+            >{{ segment.text }}</a>
             <span v-else :class="segment.tone ? `is-${segment.tone}` : undefined">{{ segment.text }}</span>
           </template>
         </p>
