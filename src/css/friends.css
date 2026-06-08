@@ -224,7 +224,7 @@
 }
 
 .trusted-matrix-board__link {
-  stroke: rgba(var(--friends-signal-rgb), calc(0.18 + var(--signal-strength) * 0.2));
+  stroke: rgba(var(--friends-signal-rgb), calc(0.18 + var(--signal-strength, 0.86) * 0.2));
   stroke-width: 0.12;
   stroke-dasharray: 1.2 1.8;
   filter: drop-shadow(0 0 4px rgba(var(--friends-signal-rgb), 0.22));
@@ -296,8 +296,8 @@
 
 .trusted-node-card {
   position: absolute;
-  top: var(--node-y);
-  left: var(--node-x);
+  top: var(--node-y, 50%);
+  left: var(--node-x, 50%);
   z-index: 3;
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
@@ -317,7 +317,7 @@
     0 20px 54px rgba(var(--friends-ink-rgb), 0.48);
   opacity: 0;
   transform: translate(-50%, -50%) translateY(12px);
-  animation: trusted-node-enter 620ms cubic-bezier(0.2, 0.78, 0.2, 1) var(--node-delay) both;
+  animation: trusted-node-enter 620ms cubic-bezier(0.2, 0.78, 0.2, 1) var(--node-delay, 0ms) both;
   transition:
     border-color 180ms ease,
     box-shadow 180ms ease,
