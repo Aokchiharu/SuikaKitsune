@@ -347,6 +347,7 @@ button:focus-visible {
 }
 
 .sweetwater-screen-two__shade {
+  opacity: 0.28;
   background:
     radial-gradient(circle at 72% 18%, rgba(252, 211, 77, 0.18), transparent 28%),
     radial-gradient(circle at 18% 84%, rgba(34, 197, 94, 0.12), transparent 30%),
@@ -619,9 +620,7 @@ button:focus-visible {
   font-size: clamp(12px, 1.15vw, 14px);
   color: rgba(255, 251, 235, 0.82);
 }
-.mind-console__line .is-url {
-  color: #ff0000;
-}
+
 .mind-console__prompt {
   color: #86efac;
 }
@@ -659,6 +658,10 @@ button:focus-visible {
 
 .mind-console__line .is-answer {
   color: #fcd34d;
+}
+
+.mind-console__line .is-url {
+  color: #ff0000;
 }
 
 .mind-console__cursor {
