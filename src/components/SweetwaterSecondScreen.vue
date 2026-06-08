@@ -22,9 +22,10 @@ const queries = [
       {
         segments: [
           { text: 'A：', tone: 'answer' },
-          { text: ' 因为我喜欢吃西瓜，而且是一只毛茸茸的大只狐狸，所以我的nickname就是狐瓜西。我的猫就叫做猫瓜西。' },
+          { text: ' 我是一只喜欢吃西瓜的柚子狸，是个巨大的毛绒玩具，所以我的nickname就是狐瓜西。我的猫就叫做猫瓜西。会一个把朋友们变圆的魔法 。' },
         ],
       },
+        { segments: [{ text: '警告：这只狡猾的狐狸会用魔法把身边所有的小动物变得圆滚滚', tone: 'url' },]}
     ],
   },
   {
@@ -107,10 +108,10 @@ const queries = [
     id: 'friends',
     index: '05',
     title: '狐瓜西的朋友们',
-    command: 'sys_check --mode=friends',
-    endpoint: 'GET /api/v1/mind/friends',
+    command: 'sys_search --info=friends',
+    endpoint: 'GET /api/v1/info/friends',
     output: [
-      { segments: [{ text: '[QUERY]: ', tone: 'muted' }, { text: 'sys_check --mode= friends', tone: 'command' }] },
+      { segments: [{ text: '[QUERY]: ', tone: 'muted' }, { text: 'sys_search --info= friends', tone: 'command' }] },
       { segments: [{ text: '[STATUS]: ', tone: 'muted' }, { text: '418 I am a teaport', tone: 'url' }] },
       { segments: [] },
       { segments: [{ text: 'Q：', tone: 'question' }, { text: '狐瓜西的朋友们有哪些呢？',tone: 'success' }] },
@@ -120,6 +121,27 @@ const queries = [
           { text: 'Click Me', tone: 'url', action: 'friends' },
         ],
       },
+    ],
+  },
+  {
+    id: 'Contact',
+    index: '05',
+    title: 'Make Contact',
+    command: 'sys_check --info=contact',
+    endpoint: 'GET /api/v1/info/contact',
+    output: [
+      { segments: [{ text: '[QUERY]: ', tone: 'muted' }, { text: 'sys_search --info= contact', tone: 'command' }] },
+      { segments: [{ text: '[STATUS]: ', tone: 'muted' }, { text: '200 OK', tone: 'success' }] },
+      { segments: [] },
+      { segments: [{ text: 'Q：', tone: 'question' }, { text: '那么如何和狐瓜西交朋友呢？',tone: 'success' }] },
+      {
+        segments: [
+          { text: 'A：', tone: 'answer' },
+          { text: '狐瓜西喜欢温柔的人，也喜欢有趣的人。我很喜欢和逻辑清晰思路明了的人对话，我也很高兴身边有朋友们直白的指出我的缺点。我想成为更完美的人。'},
+        ],
+      },
+      { segments: [{ text: 't.me/aokichiharu', tone: 'url', action: 'telegram' }] },
+      { segments: [{ text: 'x.com/AokiiChiharu', tone: 'url', action: 'twitter' },] },
     ],
   }
 ]
@@ -140,6 +162,8 @@ function selectQuery(queryId) {
 function openFriendsPage() {
   emit('openFriends')
 }
+
+
 </script>
 
 <template>
