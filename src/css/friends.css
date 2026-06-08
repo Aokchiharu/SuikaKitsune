@@ -1,3 +1,27 @@
+@property --signal-strength {
+  syntax: '<number>';
+  inherits: true;
+  initial-value: 0.86;
+}
+
+@property --node-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --node-y {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 50%;
+}
+
+@property --node-delay {
+  syntax: '<time>';
+  inherits: false;
+  initial-value: 0ms;
+}
+
 .trusted-matrix-page {
   --friends-ink: #1B262C;
   --friends-deep: #0F4C75;
@@ -224,6 +248,8 @@
 }
 
 .trusted-matrix-board__link {
+  --signal-strength: 0.86;
+
   stroke: rgba(var(--friends-signal-rgb), calc(0.18 + var(--signal-strength, 0.86) * 0.2));
   stroke-width: 0.12;
   stroke-dasharray: 1.2 1.8;
@@ -295,6 +321,10 @@
 }
 
 .trusted-node-card {
+  --node-x: 50%;
+  --node-y: 50%;
+  --node-delay: 0ms;
+
   position: absolute;
   top: var(--node-y, 50%);
   left: var(--node-x, 50%);
