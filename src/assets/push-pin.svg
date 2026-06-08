@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="72" fill="none" viewBox="0 0 64 72" role="img" aria-labelledby="pin-title pin-desc">
+  <title id="pin-title">金色图钉</title>
+  <desc id="pin-desc">带高光、阴影和尖针的金橘色图钉。</desc>
+  <ellipse cx="32" cy="25" fill="#78350F" opacity=".2" rx="22" ry="20"/>
+  <circle cx="32" cy="24" r="19" fill="#F59E0B"/>
+  <circle cx="26" cy="17" r="7" fill="#FDE68A" opacity=".75"/>
+  <path fill="#92400E" d="M30 40h5l-2 30-3-30Z"/>
+  <path fill="#FBBF24" d="M34 40h3l-3 25V40Z" opacity=".75"/>
+  <path stroke="#78350F" stroke-opacity=".4" stroke-width="2" d="M17 32c8 9 23 10 32 0"/>
+</svg>
