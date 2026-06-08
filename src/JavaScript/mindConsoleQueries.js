@@ -5,9 +5,9 @@ export const mindConsoleVisual = {
 }
 
 export const mindConsoleMeta = {
-  eyebrow: 'Sweetwater Control Deck',
-  title: 'Mind Query Console',
-  summary: '选择左侧接口，读取狐瓜西的底层配置与自我迭代日志。',
+  eyebrow: 'Control Panel',
+  title: 'Mesa Hub',
+  summary: 'Retrieve basic information via the authorised panel',
 }
 
 export const mindConsoleQueries = [
