@@ -636,6 +636,10 @@ button:focus-visible {
   color: #fcd34d;
 }
 
+.mind-console__line .is-url {
+  color: #ff0000;
+}
+
 .mind-console__cursor {
   display: inline-block;
   width: 0.8em;
