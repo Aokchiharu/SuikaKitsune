@@ -4,6 +4,8 @@ import HeroCard from './HeroCard.vue'
 import SweetwaterSecondScreen from './SweetwaterSecondScreen.vue'
 import MusicControl from './MusicControl.vue'
 
+const emit = defineEmits(['openFriends'])
+
 const screenViewport = useTemplateRef('screenViewport')
 const screenTrack = useTemplateRef('screenTrack')
 const screenAnimationDuration = 1500
@@ -188,7 +190,7 @@ onBeforeUnmount(() => {
         <HeroCard />
       </section>
 
-      <SweetwaterSecondScreen />
+      <SweetwaterSecondScreen @open-friends="emit('openFriends')" />
     </div>
   </main>
 </template>

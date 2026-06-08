@@ -17,6 +17,8 @@ defineProps({
     required: true,
   },
 })
+
+const emit = defineEmits(['openFriends'])
 </script>
 
 <template>
@@ -35,11 +37,19 @@ defineProps({
 
       <div class="mind-console__output">
         <p v-for="(line, lineIndex) in lines" :key="lineIndex" class="mind-console__line">
-          <span
+          <template
             v-for="(segment, segmentIndex) in line.segments"
             :key="`${lineIndex}-${segmentIndex}`"
-            :class="segment.tone ? `is-${segment.tone}` : undefined"
-          >{{ segment.text }}</span>
+          >
+            <button
+              v-if="segment.action === 'friends'"
+              class="mind-console__link"
+              :class="segment.tone ? `is-${segment.tone}` : undefined"
+              type="button"
+              @click="emit('openFriends')"
+            >{{ segment.text }}</button>
+            <span v-else :class="segment.tone ? `is-${segment.tone}` : undefined">{{ segment.text }}</span>
+          </template>
         </p>
         <span class="mind-console__cursor" :class="{ 'is-hidden': !isCursorVisible }" aria-hidden="true">_</span>
       </div>

@@ -5,6 +5,8 @@ import { useTerminalStream } from '../composables/useTerminalStream'
 import MindQueryList from './mind-console/MindQueryList.vue'
 import MindStdoutPanel from './mind-console/MindStdoutPanel.vue'
 
+const emit = defineEmits(['openFriends'])
+
 const queries = [
   {
     id: 'architecture',
@@ -77,7 +79,7 @@ const queries = [
       {
         segments: [
           { text: 'A：', tone: 'answer' },
-          { text: ' 人类的灵魂脆弱而又珍贵，构建一个完整而又tough的灵魂就像露珠结冰一般，由外而内层层迭代，最终成为晶莹剔透的、一个完整的人。我们不能让他人代替我们活着，也不能成为空心人，虚假的自我只会让人生变得一团糟' },
+          { text: ' 人类的灵魂脆弱而又珍贵，构建一个完整而又tough的灵魂就像露珠结冰一般，由外而内层层迭代，最终成为一个完整的人。我们不能让他人代替我们活着，也不能成为空心人，虚假的自我只会让人生变得一团糟' },
         ],
       },
     ],
@@ -115,7 +117,7 @@ const queries = [
       {
         segments: [
           { text: 'A：', tone: 'answer' },
-          { text: ' ', tone: 'url' },
+          { text: 'Click Me', tone: 'url', action: 'friends' },
         ],
       },
     ],
@@ -133,6 +135,10 @@ function selectQuery(queryId) {
   }
 
   activeQueryId.value = queryId
+}
+
+function openFriendsPage() {
+  emit('openFriends')
 }
 </script>
 
@@ -155,6 +161,7 @@ function selectQuery(queryId) {
           :lines="visibleOutputLines"
           :is-streaming="isStreaming"
           :is-cursor-visible="isCursorVisible"
+          @open-friends="openFriendsPage"
         />
       </div>
     </div>
