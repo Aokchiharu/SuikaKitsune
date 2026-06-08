@@ -2,6 +2,7 @@ import { onBeforeUnmount, onMounted, useTemplateRef } from 'vue'
 
 const screenAnimationDuration = 1500
 const touchThreshold = 48
+const screenPagerIgnoreSelector = '[data-screen-pager-ignore]'
 
 function getScreenScrollProgress(progress) {
   const accelerationRatio = 0.24
@@ -100,7 +101,15 @@ export function useHomeScreenPager() {
     return true
   }
 
+  function shouldIgnoreScreenPagerEvent(event) {
+    return event.target instanceof Element && Boolean(event.target.closest(screenPagerIgnoreSelector))
+  }
+
   function handleWheel(event) {
+    if (shouldIgnoreScreenPagerEvent(event)) {
+      return
+    }
+
     const direction = Math.sign(event.deltaY)
 
     if (direction === 0) {
@@ -118,6 +127,11 @@ export function useHomeScreenPager() {
   }
 
   function handleTouchStart(event) {
+    if (shouldIgnoreScreenPagerEvent(event)) {
+      touchStartY = null
+      return
+    }
+
     touchStartY = event.touches[0]?.clientY ?? null
   }
 

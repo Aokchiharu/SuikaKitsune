@@ -33,7 +33,7 @@ const externalActionLinks = {
       <span class="mind-console__stream-state">{{ isStreaming ? 'STREAMING' : 'IDLE' }}</span>
     </div>
 
-    <div class="mind-console__screen">
+    <div class="mind-console__screen" data-screen-pager-ignore>
       <div class="mind-console__scanline" aria-hidden="true"></div>
       <p class="mind-console__active-command">
         <span class="mind-console__prompt">fox@sweetwater:~$</span>

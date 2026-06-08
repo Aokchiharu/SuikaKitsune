@@ -7,7 +7,7 @@ export const mindConsoleVisual = {
 export const mindConsoleMeta = {
   eyebrow: 'Control Panel',
   title: 'Mesa Hub',
-  summary: 'Retrieve basic information via the authorised panel',
+  summary: 'All the world\'s a stage, And all the men and women merely players',
 }
 
 export const mindConsoleQueries = [

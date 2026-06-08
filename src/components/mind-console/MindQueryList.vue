@@ -14,7 +14,7 @@ const emit = defineEmits(['selectQuery'])
 </script>
 
 <template>
-  <aside class="mind-console__sidebar" aria-label="Query List">
+  <aside class="mind-console__sidebar" aria-label="Query List" data-screen-pager-ignore>
     <div class="mind-console__bar">
       <span>Query List</span>
       <span class="mind-console__bar-status">ONLINE</span>
